@@ -3,7 +3,7 @@ import json
 import os
 import smtplib
 import ssl
-import time
+from time import sleep
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from typing import List
@@ -46,7 +46,7 @@ def get_availability(days: int, district_ids: List[int], min_age_limit: int):
     all_date_df = None
 
     for district_id in district_ids:
-        time.sleep(3)
+        sleep(3)
         print(f"checking for INP_DATE:{INP_DATE} & DIST_ID:{district_id}")
         URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id={}&date={}".format(district_id, INP_DATE)
         print(f"{URL}")
