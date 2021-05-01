@@ -47,6 +47,7 @@ def get_availability(days: int, district_ids: List[int], min_age_limit: int):
     for district_id in district_ids:
         print(f"checking for INP_DATE:{INP_DATE} & DIST_ID:{district_id}")
         URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id={}&date={}".format(district_id, INP_DATE)
+        print(f"{URL}")
         data = get_data(URL)
         df = pd.DataFrame(data)
         if len(df):
