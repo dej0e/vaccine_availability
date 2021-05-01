@@ -4,6 +4,8 @@
 name: cron
 
 on:
+  workflow_dispatch:
+
   schedule:
    # - cron: '0 0,6,12,18 * * *' # Every 6 hours
    - cron: '*/10 * * * *' # Every 10 min
