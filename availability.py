@@ -115,11 +115,16 @@ def send_email(data_frame, age):
 
 
 if __name__ == "__main__":
-    Ahmedabad = 154
-    Ahmedabad_Corporation = 770
-    dist_ids = [Ahmedabad, Ahmedabad_Corporation]
+    Pathanamthitta = 300
+    Alappuzha = 301
+    
+    Bangalore_Urban = 265
+    Bangalore_Rural = 276
+    BBMP = 294
+    
+    dist_ids = [Pathanamthitta, Alappuzha, Bangalore_Urban, Bangalore_Rural, BBMP]
     next_n_days = 5
-    min_age_limit = 50
+    min_age_limit = 18
 
     availability_data = get_availability(next_n_days, dist_ids, min_age_limit)
     print(availability_data)
