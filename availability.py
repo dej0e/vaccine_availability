@@ -78,7 +78,7 @@ def send_email(data_frame, age):
     receiver_email = os.environ['RECEIVER_EMAIL']
 
     message = MIMEMultipart("alternative")
-    message["Subject"] = "Availability for Max Age {} Count {}".format(age, len(data_frame.index))
+    message["Subject"] = "[Vaccine Alert] Availability for Age {}+ - Count {}".format(age, len(data_frame.index))
     message["From"] = sender_email
     message["To"] = receiver_email
 
