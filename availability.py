@@ -3,7 +3,6 @@ import json
 import os
 import smtplib
 import ssl
-from time import sleep
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from typing import List
@@ -63,7 +62,7 @@ def get_availability(days: int, district_ids: List[int], min_age_limit: int):
                 all_date_df = df
 
     if all_date_df is not None:
-        all_date_df = all_date_df.drop(["block_name"], axis=1).sort_values(["min_age_limit", "district_name", "available_capacity"], ascending=[True, True, False])
+        all_date_df = all_date_df.drop(["block_name"], axis=1).sort_values(["min_age_limit", "state_name", "district_name", "available_capacity"], ascending=[True, True, True, False])
         return all_date_df[all_date_df.min_age_limit >= min_age_limit]
     return pd.DataFrame()
 
